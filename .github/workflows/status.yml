@@ -22,7 +22,7 @@ jobs:
     steps:
        - name: rest api
          run: |
-           curl -X POST https://bhavyass.atlassian.net/rest/api/2/issue/TS-2/transitions --user charanv@devtools.in:ATATT3xFfGF0K6v7T3btFUlpg4gu6bdXPzBkwURmytpl3nqt64mjXo4u_EBvaq2BmHvz8U-tUdLhjA4OUjwIBvnlboFKJm2c6iwC1c0CJ_2hfZYGT4PbCTGJpyaIZ0hPTSORde2NocEdQbq5VTwo47__7ryAhbpSpafvBEIlsGgZtL6uUjDDx18=14C4D5F7 -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{
+           curl -X POST https://bhavyass.atlassian.net/rest/api/2/issue/TS-2/transitions --user ${{ secrets.EMAIL }}:${{ secrets.JIRA_API_TOKEN }} -H 'Accept: application/json' -H 'Content-Type: application/json' -d '{
              "transition": {
                "id": "21"
              }
