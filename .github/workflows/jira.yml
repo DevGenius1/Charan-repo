@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
       inputs:
         issuekey:
-          description: 'Test scenario tags'
+          description: 'Issue Key'
           required: true
           type: string
 
@@ -28,5 +28,5 @@ jobs:
     - name: Transition issue
       uses: atlassian/gajira-transition@v3
       with:
-        issue: SSP-8
+        issue: ${{ github.event.inputs.issuekey }}
         transition: "In progress"
