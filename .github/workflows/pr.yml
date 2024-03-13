@@ -15,7 +15,7 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-          url: 'https://api.github.com/repos/DevGenius1/Test/pulls'
+          url: 'https://api.github.com/repos/DevGenius1/Charan-repo/pulls'
           method: 'POST'
           username: ${{ secrets.GUSERNAME }}
           password: ${{ secrets.PAT }}
