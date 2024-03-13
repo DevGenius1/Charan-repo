@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage
-      uses: fjogeleit/http-request-action@v1
+      uses: Charan-SV/PR-1@v1
       with:
           url: 'https://api.github.com/repos/DevGenius1/Charan-repo/pulls'
           method: 'POST'
           username: ${{ secrets.GUSERNAME }}
           password: ${{ secrets.PAT }}
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{ "title": "created", "body": "to test the auto pr", "head": "Development", "base": "main"}'
+          data: '{ "title": "created1", "body": "to test the auto pr", "head": "Development", "base": "main"}'
