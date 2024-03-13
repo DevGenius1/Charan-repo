@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage
-      uses: Charan-SV/PR-1@v1
+      uses: Charan-SV/PR1@v1
       with:
           url: 'https://api.github.com/repos/DevGenius1/Charan-repo/pulls'
           method: 'POST'
