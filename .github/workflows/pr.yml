@@ -15,9 +15,9 @@ jobs:
     - name: Deploy Stage
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https://api.github.com/repos/DevGenius1/Charan-repo/pulls/'
-        method: 'POST'
-        username: ${{ secrets.GUSERNAME }}
-        password: ${{ secrets.PAT }}
-        customHeaders: '{"Content-Type": "application/json"}'
-        data: '{"title":"Amazing new feature","body":"Please pull these awesome changes in!","head":"Development","base":"main"}'
+          url: 'https://api.github.com/repos/DevGenius1/Test/pulls'
+          method: 'POST'
+          username: ${{ secrets.GUSERNAME }}
+          password: ${{ secrets.PAT }}
+          customHeaders: '{"Content-Type": "application/json"}'
+          data: '{ "title": "created by BOT", "body": "to test the auto pr", "head": "Development", "base": "main"}'
