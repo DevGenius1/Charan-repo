@@ -13,6 +13,8 @@ jobs:
     runs-on: wc
     environment: Dev
     steps:
+    - name: checkout
+      uses: actions/checkout@v1
     - name: Deploy Stage
       uses: Charan-SV/PR1@v1
       with:
@@ -21,13 +23,15 @@ jobs:
           username: ${{ secrets.GUSERNAME }}
           password: ${{ secrets.PAT }}
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{ "title": "test-pr", "body": "to test the auto pr", "head": "Development", "base": "main"}'
+          data: '{ "title": "test-pr-dev", "body": "to test the auto pr", "head": "Development", "base": "stageing"}'
 
   prod:
       runs-on: LC
       needs: development
       environment: Prod
       steps:
+      - name: checkout
+        uses: actions/checkout@v1
       - name: Deploy Stage
         uses: Charan-SV/PR1@v1
         with:
@@ -36,5 +40,5 @@ jobs:
             username: ${{ secrets.GUSERNAME }}
             password: ${{ secrets.PAT }}
             customHeaders: '{"Content-Type": "application/json"}'
-            data: '{ "title": "test-pr", "body": "to test the auto pr", "head": "stageing", "base": "main"}'
+            data: '{ "title": "test-pr-prod", "body": "to test the auto pr", "head": "Development", "base": "main"}'
       
