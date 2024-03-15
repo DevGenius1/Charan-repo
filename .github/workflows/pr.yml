@@ -36,5 +36,5 @@ jobs:
             username: ${{ secrets.GUSERNAME }}
             password: ${{ secrets.PAT }}
             customHeaders: '{"Content-Type": "application/json"}'
-            data: '{ "title": "test-pr", "body": "to test the auto pr", "head": "Development", "base": "main"}'
+            data: '{ "title": "test-pr", "body": "to test the auto pr", "head": "stageing", "base": "main"}'
       
