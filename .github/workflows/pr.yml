@@ -26,7 +26,7 @@ jobs:
           data: '{ "title": "test-pr-dev", "body": "to test the auto pr", "head": "Development", "base": "stageing"}'
 
   prod:
-      runs-on: LC
+      runs-on: wc
       needs: development
       environment: Prod
       steps:
