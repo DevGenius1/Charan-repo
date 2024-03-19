@@ -86,6 +86,6 @@ jobs:
     - name: test
       run: |
          mkdir report
-         cp /home/runner/work/_temp/codeql_databases/* report
+         cp -r /home/runner/work/_temp/codeql_databases/* report
         
         
