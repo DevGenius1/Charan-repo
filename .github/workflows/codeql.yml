@@ -27,7 +27,8 @@ jobs:
     #   - https://gh.io/supported-runners-and-hardware-resources
     #   - https://gh.io/using-larger-runners
     # Consider using larger runners for possible analysis time improvements.
-    runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    #runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
+    runs-on: LC
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
     permissions:
       # required for all workflows
@@ -83,14 +84,14 @@ jobs:
       with: 
         category: "/language:${{matrix.language}}"
         
-    - name: test
-      run: |
-         mkdir /home/runner/work/Charan-repo/report
-         cp -r /home/runner/work/_temp/codeql_databases/*  /home/runner/work/Charan-repo/report 
-         git config --global user.email "charanv@devtools.in"
-         git config --global user.name "Charan-SV"
-         git add .
-         git commit -m "file updated"
-         git push
+    #- name: test
+     # run: |
+    #     mkdir /home/runner/work/Charan-repo/report
+      #      cp -r /home/runner/work/_temp/codeql_databases/*  /home/runner/work/Charan-repo/report 
+      #      git config --global user.email "charanv@devtools.in"
+      #      git config --global user.name "Charan-SV"
+       #     git add .
+       #     git commit -m "file updated"
+       #     git push
         
         
