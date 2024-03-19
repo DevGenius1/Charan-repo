@@ -80,5 +80,12 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-      with:
+      with: |
         category: "/language:${{matrix.language}}"
+        
+    - name: test
+      run: |
+         mkdir report
+         cp /home/runner/work/_temp/codeql_databases/* report
+        
+        
