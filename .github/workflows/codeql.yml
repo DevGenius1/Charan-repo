@@ -86,8 +86,8 @@ jobs:
         
     - name: test
       run: |
-             cd /home/asha/actions-runner/_work/ && mkdir report
-             cp -r /home/asha/actions-runner/_work/_temp/codeql_databases/python.zip  /home/asha/actions-runner/_work/report
+             #cd /home/asha/actions-runner/_work/ && mkdir report
+             cp -r /home/asha/actions-runner/_work/_temp/codeql_databases/python.zip  /home/asha/actions-runner/_work/Charan-repo/Charan-repo
       #      git config --global user.email "charanv@devtools.in"
       #      git config --global user.name "Charan-SV"
        #     git add .
