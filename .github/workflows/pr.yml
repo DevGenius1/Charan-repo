@@ -9,15 +9,36 @@ on:
     branches: [ "Development" ]
 
 jobs:
-  deployment:
-    runs-on: ubuntu-latest
+  development: 
+    runs-on: wc
+    environment: Dev
     steps:
+    - name: checkout
+      uses: actions/checkout@v1
     - name: Deploy Stage
-      uses: fjogeleit/http-request-action@v1
+      uses: Charan-SV/PR1@v1
       with:
-        url: 'https://api.github.com/repos/DevGenius1/Charan-repo/pulls/'
-        method: 'POST'
-        username: ${{ secrets.GUSERNAME }}
-        password: ${{ secrets.PAT }}
-        customHeaders: '{"Content-Type": "application/json"}'
-        data: '{"title":"Amazing new feature","body":"Please pull these awesome changes in!","head":"Development","base":"main"}'
+          url: 'https://api.github.com/repos/DevGenius1/Charan-repo/pulls'
+          method: 'POST'
+          username: ${{ secrets.GUSERNAME }}
+          password: ${{ secrets.PAT }}
+          customHeaders: '{"Content-Type": "application/json"}'
+          data: '{ "title": "test-pr-dev", "body": "to test the auto pr", "head": "Development", "base": "stageing"}'
+
+  prod:
+      runs-on: wc
+      needs: development
+      environment: Prod
+      steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: Deploy Stage
+        uses: Charan-SV/PR1@v1
+        with:
+            url: 'https://api.github.com/repos/DevGenius1/Charan-repo/pulls'
+            method: 'POST'
+            username: ${{ secrets.GUSERNAME }}
+            password: ${{ secrets.PAT }}
+            customHeaders: '{"Content-Type": "application/json"}'
+            data: '{ "title": "test-pr-prod", "body": "to test the auto pr", "head": "Development", "base": "main"}'
+      
