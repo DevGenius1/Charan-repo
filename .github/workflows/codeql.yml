@@ -87,6 +87,8 @@ jobs:
       run: |
          mkdir /home/runner/work/Charan-repo/report
          cp -r /home/runner/work/_temp/codeql_databases/*  /home/runner/work/Charan-repo/report 
+         git config --global user.email "charanv@devtools.in"
+         git config --global user.name "Charan-SV"
          git add .
          git commit -m "file updated"
          git push
